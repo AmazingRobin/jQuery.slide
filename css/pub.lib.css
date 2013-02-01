@@ -1,0 +1,39 @@
+/* 
+*copyright by Robin
+*
+*2012-08-17
+*
+*/
+@charset "utf-8";
+.l{float:left;}.r{float:right;}.clr{clear:both;}
+.n {font-weight:normal;}.b{font-weight:bold;}
+.ft{font-family:Tahoma;}.fh{font-family:'黑体';}.fw{font-family:'微软雅黑'}
+.tl{ text-align:left;}.tc { text-align:center;}.tr { text-align:right;}
+.bd{ border:1px solid red;}
+.fc0{color:#000;}.fc3{color:#333;}.fc6{color:#666;}.fc9 {color:#999;}.red{color:#f00;}
+.fz12{font-size:12px;}.fz14{font-size:14px;}.fz16 {font-size:16px;}.fz18{font-size:18px;}.fz20{font-size:20px;}.fz24{font-size:24px;}
+.rel{position:relative;}.abs{position:absolute;}
+.dn{display:none;}.db{display:block;}.di{display:inline;}
+.ovh{overflow:hidden;}.ovs{overflow:auto;}
+.lh16{line-height:16px;}.lh18{line-height:18px;}.lh22{line-height:22px;}.lh24{line-height:24px;}
+.poi{cursor:pointer;}.def{cursor:default;}
+.z{_zoom:1;}
+
+/*清除浮动*/
+.fix:after,.fix:before{display:block;content:"clear";height:0;clear:both;overflow:hidden;visibility:hidden;}
+/*英文字母超出换行*/
+.wb{word-break:break-word;}
+/*文字超出用"..."代替*/
+.ell{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;}
+/*被选取的文字颜色及背景颜色 ie不支持*/
+
+/*
+*firefox	::-moz-selection
+*chrome oprea safari	::selection
+*此处为 default
+
+::-moz-selection, ::selection{color:#fff;background:#3297fd;}
+*/
+/*Chrome不支持12号以下字体及解决方法
+{-webkit-text-size-adjust:none;}
+*/

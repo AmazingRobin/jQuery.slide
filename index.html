@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>jQuery.slide(图片轮翻)插件 Demo</title>
+	<link rel="stylesheet" type="text/css" href="http://www.lisibin.org/demo/css/reset.css" media="all" />
+	<style type="text/css">
+	.slide-box { width: 600px; height: 300px; overflow:hidden; position:relative;}
+	.slide-list { position:relative;}
+	.slide-list li { float:left;}
+	.slide-list li a { display:block; float:left;}
+	#btn-bg { width: 100%; height: 50px; line-height: 50px; position:absolute; left:0; bottom:0; background:rgba(0, 0, 0, 0.6)!important; background:#000; 
+				filter:Alpha(opacity='60'); font-family: "微软雅黑"; font-size: 18px; color: #f1f1f1; text-indent: 10px;}
+	#btn { position:absolute; bottom:10px; right: 10px; }
+	#btn span { display: block; padding:3px 8px; margin-left: 10px; border:1px solid #f6f6f6; background:#62b4e4; color: #fff; cursor:pointer; float:left;}
+	#btn span.current { background:#f06e06;}
+	#prev, #next { display: block; width: 45px; height: 100px; cursor: pointer; position:absolute; top: 75px; background: url(images/silder_btn.gif) no-repeat; opacity: 0.6;}
+	#prev { left: 0; background-position: left 0;}
+	#next { right: 0; background-position: right 0;}
+	p { margin: 20px 0; font-size: 16px; font-weight: bold;}
+	</style>
+</head>
+<body>
+	<!-- Header S -->
+	<h1 id="header">jQuery.slide(图片轮翻)插件 Demo</h1>
+	<!-- Header E -->
+	<div id="main">
+
+		<p>Demo1：全局默认配置：左右箭头、标题栏、按钮、左右滚动，按钮为滑动触发、滚动效果swing、持续时间0.3s、滚动间隔4s</p>
+		<div class="slide-box" id="demo1">
+			<ul class="slide-list">
+				<li><a href="javascript:;"><img src="images/001.jpg" alt="图片标题1" /></a></li>
+				<li><a href="javascript:;"><img src="images/002.jpg" alt="图片标题2" /></a></li>
+				<li><a href="javascript:;"><img src="images/003.jpg" alt="图片标题3" /></a></li>
+				<li><a href="javascript:;"><img src="images/004.jpg" alt="图片标题4" /></a></li>
+			</ul>
+		</div>
+
+		<p>Demo2：用户自定义：标题栏、按钮、左右滚动，不带箭头，按钮为点击触发、滚动效果linear、持续时间0.5s、滚动间隔3s</p>
+		<div class="slide-box" id="demo2">
+			<ul class="slide-list">
+				<li><a href="javascript:;"><img src="images/001.jpg" alt="图片标题1" /></a></li>
+				<li><a href="javascript:;"><img src="images/002.jpg" alt="图片标题2" /></a></li>
+				<li><a href="javascript:;"><img src="images/003.jpg" alt="图片标题3" /></a></li>
+				<li><a href="javascript:;"><img src="images/004.jpg" alt="图片标题4" /></a></li>
+			</ul>
+		</div>
+
+		<p>Demo3：用户自定义：隐藏操作按钮，上下滚动、滚动效果swing、持续时间0.3s、滚动间隔4s</p>
+		<div class="slide-box" id="demo3">
+			<ul class="slide-list">
+				<li><a href="javascript:;"><img src="images/001.jpg" alt="图片标题1" /></a></li>
+				<li><a href="javascript:;"><img src="images/002.jpg" alt="图片标题2" /></a></li>
+				<li><a href="javascript:;"><img src="images/003.jpg" alt="图片标题3" /></a></li>
+				<li><a href="javascript:;"><img src="images/004.jpg" alt="图片标题4" /></a></li>
+			</ul>
+		</div>
+
+		<p>PS: 下面是滚动效果linear、swing的区别(速度曲线)</p>
+		<p> <img src="images/easing.jpg" alt="滚动效果linear、swing的区别" /> </p>
+		<p>如果你对这个感兴趣，可参考 jQuery Ui或者 jQuery Easing Plugin</p>
+		<p>jQuery Ui : <a href="http://jqueryui.com/effect/#easing" target="_blank">http://jqueryui.com/effect/#easing</a> </p>
+		<p>jQuery Easing Plugin : <a href="http://gsgd.co.uk/sandbox/jquery/easing/" target="_blank">http://gsgd.co.uk/sandbox/jquery/easing/</a> </p>
+		<p> Copyright &copy; 2013 By Robin</p>
+	</div>
+	<!-- Footer S -->
+	<div id="footer">DemoBox &copy;copyright 2012 by <a href="http://www.lisibin.org" class="bloger">Robin</a></div>
+	<!-- Footer E -->
+
+	<!-- 脚本 -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+	<script type="text/javascript" src="script/jquery-slide.js"></script>
+	<script type="text/javascript">
+	$("#demo1").slide();
+	$("#demo2").slide({
+		direction : "left",	//滚动方向 left || top
+		duration : 500,	//滚动时间 
+		easing : "linear", // 过度效果 linear || swing
+		delay : 3000, //滚动延迟
+		arraw : false, //箭头
+		title : true, //标题栏
+		btn : true, //按钮
+		trigger : "click" //触发事件 click || mouseenter
+	})
+	$("#demo3").slide({
+		direction : "top",	//滚动方向 left || top
+		duration : 300,	//滚动时间 
+		easing : "swing", // 过度效果 linear || swing
+		delay : 4000, //滚动延迟
+		arraw : false, //箭头
+		title : false, //标题栏
+		btn : true, //按钮
+		trigger : "mouseenter" //触发事件 click || mouseenter
+	})
+	</script>
+</body>
+</html>
